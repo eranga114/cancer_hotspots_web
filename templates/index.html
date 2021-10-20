@@ -1,0 +1,52 @@
+   <html>
+    <head>
+        <title> Practice</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js">
+        </script>
+
+    </head>
+    <body>
+    <div class="ui container">
+        <div class="ui sizer vertical segment">
+          <h1 class="ui block header"><center>Welcome to Cancer Driver Mutation Analyzer</center></h1>
+            <h3 class="ui header"><center>Andersen Lab </center></h3>
+        </div>
+          <p></p>
+            <div class="ui three item menu">
+                <a class="item">Home</a>
+                <a class="item">About</a>
+                <a class="item active">Download</a>
+            </div>
+            <div class="ui form">
+<form action="/submitform" method="post" class="ui form">
+  <div class="ui form">
+  <div class="three fields">
+    <div class="field">
+      <label>Mutation Position in the Genome</label>
+      <input type="text" name="startPosition" placeholder="Position">
+    </div>
+    <div class="field">
+      <label>Number of mutations</label>
+      <input type="text" name="mut_count" placeholder="Mutation Count">
+    </div>
+    <div class="field">
+      <label>Total mutations in the Gene</label>
+      <input type="text" name="total_mut_count" placeholder="Total Mutations">
+    </div>
+  </div>
+</div>
+
+  <button class="ui primary button" type="submit">Submit</button>
+</form>
+                <br><br>
+                {% if prediction is defined %}
+                <h1>Prediction: {{ prediction }}</h1>
+                <h1>status: {{ hotspot }}</h1>
+                {% endif %}
+        </div>
+    </div>
+    </div>
+    </div>
+    </body>
+  </html>
